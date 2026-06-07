@@ -1,0 +1,6 @@
+@SDGP_VVP.api_HostAddress = http://localhost:5251
+
+GET {{SDGP_VVP.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
