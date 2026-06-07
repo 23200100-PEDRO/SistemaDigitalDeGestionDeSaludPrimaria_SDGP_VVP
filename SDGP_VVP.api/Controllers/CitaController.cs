@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SDGP_VVP.Core.DTOs;
 using SDGP_VVP.Infrastructure.Data;
-// Cambio de prueba para GitHub    
+// Cambio de prueba para GitHub 2026    
 namespace SDGP_VVP.api.Controllers
 {
     [Route("api/[controller]")]

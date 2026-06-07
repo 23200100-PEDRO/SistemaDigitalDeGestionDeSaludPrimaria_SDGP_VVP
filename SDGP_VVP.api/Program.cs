@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SDGP_VVP.Infrastructure.Data;
-
+//Prueba de GitHub
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
