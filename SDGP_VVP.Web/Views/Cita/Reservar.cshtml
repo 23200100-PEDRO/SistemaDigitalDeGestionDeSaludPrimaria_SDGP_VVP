@@ -1,0 +1,165 @@
+﻿@model SDGP_VVP.Web.Models.ReservarCitaViewModel
+
+@{
+    ViewData["Title"] = "Reservar Cita";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg border-0 p-5">
+
+        <h2 class="text-primary mb-4">
+            📅 Reservar Cita Médica
+        </h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.Error
+            </div>
+        }
+
+        <form method="post">
+                       
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                                               
+                        <label class="form-label">
+                            Especialidad
+                        </label>
+
+                        <select asp-for="IdEspecialidad"
+                                class="form-select">
+
+                            @foreach (
+                                SDGP_VVP.Web.Models.EspecialidadViewModel especialidad
+                                in ViewBag.Especialidades)
+                            {
+                                <option value="@especialidad.IdEspecialidad">
+
+                                    @especialidad.Nombre
+
+                                </option>
+                            }
+
+                        </select>
+
+                    
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Médico
+                    </label>
+
+                    <select asp-for="IdMedico"
+                            class="form-select">
+
+                        @foreach (
+                            SDGP_VVP.Web.Models.MedicoViewModel medico
+                            in ViewBag.Medicos)
+                        {
+                            <option value="@medico.IdMedico">
+
+                                @medico.Nombre
+
+                            </option>
+                        }
+
+                    </select>   
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Fecha
+                    </label>
+
+                    <input type="date"
+                           class="form-control"
+                           value="2026-06-10"
+                           readonly />
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Hora
+                    </label>
+
+                    <select asp-for="IdAgenda"
+                            class="form-select">
+
+                        @foreach (
+                            SDGP_VVP.Web.Models.AgendaViewModel agenda
+                            in ViewBag.Agendas)
+                        {
+                            <option value="@agenda.IdAgenda">
+
+                                @agenda.HoraInicio
+
+                            </option>
+                        }
+
+                    </select>
+
+                </div>
+
+                <div class="col-12">
+
+                    <div class="alert alert-info">
+
+                        <strong>ℹ Información:</strong>
+
+                        Seleccione la hora disponible para reservar
+                        su cita médica.
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 mb-3">
+
+                    <label class="form-label">
+                        Motivo de Consulta
+                    </label>
+
+                    <textarea asp-for="MotivoConsulta"
+                              class="form-control"
+                              rows="3"
+                                  placeholder="Describa el motivo de la consulta">
+                    </textarea>
+
+                    </div>
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary btn-lg mt-3 w-100">
+
+                    Reservar Cita
+
+                </button>
+
+            </form>
+
+            <div class="mt-3">
+
+                <a asp-controller="Dashboard"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                    ← Volver al Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>

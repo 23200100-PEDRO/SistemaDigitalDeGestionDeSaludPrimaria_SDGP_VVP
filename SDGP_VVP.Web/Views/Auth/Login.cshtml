@@ -1,0 +1,91 @@
+﻿@model SDGP_VVP.Web.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card shadow-lg border-0">
+
+                <div class="card-body p-5">
+
+                    <h2 class="text-center text-primary mb-4">
+                        Iniciar Sesión
+                    </h2>
+
+                    <form method="post">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Correo
+                            </label>
+
+                            <div class="input-group">
+                                <span class="input-group-text">👤</span>
+
+                                <input asp-for="Correo"
+                                       type="email"
+                                       class="form-control"
+                                       placeholder="Ingrese su correo" />
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Contraseña
+                            </label>
+
+                            <div class="input-group">
+                                <span class="input-group-text">🔒</span>
+
+                                <input asp-for="Password"
+                                       type="password"
+                                       class="form-control"
+                                       placeholder="Ingrese su contraseña" />
+                            </div>
+
+                        </div>
+
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger">
+                                @ViewBag.Error
+                            </div>
+                        }
+
+                        <button type="submit"
+                                class="btn btn-primary w-100">
+                            Ingresar
+                        </button>
+
+                    </form>
+
+                    <div class="text-center mt-3">
+
+                        <a asp-controller="Home"
+                               asp-action="Index"
+                               class="btn btn-outline-secondary">
+
+                            ← Volver al Inicio
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

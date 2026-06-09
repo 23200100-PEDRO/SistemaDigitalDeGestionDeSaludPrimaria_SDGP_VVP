@@ -1,0 +1,143 @@
+﻿@model List<SDGP_VVP.Web.Models.MisCitaViewModel>
+
+@{
+    ViewData["Title"] = "Mis Citas";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white">
+
+            <h3 class="mb-0">
+                📋 Mis Citas Médicas
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            @if (Model.Count == 0)
+            {
+                <div class="alert alert-warning">
+
+                    No tienes citas registradas.
+
+                </div>
+            }
+            else
+            {
+                <table class="table table-hover table-striped align-middle">
+
+                    <thead class="table-primary">
+
+                        <tr>
+
+                            <th>Fecha</th>
+
+                            <th>Hora</th>
+
+                            <th>Médico</th>
+
+                            <th>Especialidad</th>
+
+                            <th>Motivo</th>
+
+                            <th>Estado</th>
+
+                            <th>Acciones</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var cita in Model)
+                        {
+                            <tr>
+
+                                <td>@cita.Fecha</td>
+
+                                <td>@cita.HoraInicio</td>
+
+                                <td>@cita.Medico</td>
+
+                                <td>@cita.Especialidad</td>
+
+                                <td>@cita.Motivo</td>
+
+                                <td>
+
+                                    @if (cita.Estado == "Reservada")
+                                    {
+                                        <span class="badge bg-success">
+                                            @cita.Estado
+                                        </span>
+                                    }
+                                    else if (cita.Estado == "Cancelada")
+                                    {
+                                        <span class="badge bg-danger">
+                                            @cita.Estado
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">
+                                            @cita.Estado
+                                        </span>
+                                    }
+
+                                </td>
+
+                                <td>
+
+                                    @if (cita.Estado == "Reservada")
+                                    {
+                                        <form asp-action="Cancelar"
+                                              asp-controller="MisCitas"
+                                              method="post">
+
+                                            <input type="hidden"
+                                                   name="id"
+                                                   value="@cita.IdCita" />
+
+                                            <button type="submit"
+                                                    class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('¿Desea cancelar esta cita?')">
+
+                                                ❌ Cancelar
+
+                                            </button>
+
+                                        </form>
+                                    }
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            }
+
+            <div class="mt-4">
+
+                <a asp-controller="Dashboard"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                    ← Volver al Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

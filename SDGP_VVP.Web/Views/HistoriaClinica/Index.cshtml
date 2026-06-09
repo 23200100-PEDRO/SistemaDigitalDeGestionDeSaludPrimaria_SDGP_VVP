@@ -1,0 +1,128 @@
+﻿@model SDGP_VVP.Web.Models.HistoriaClinicaCompletaViewModel
+
+@{
+    ViewData["Title"] = "Historia Clínica";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white">
+
+            <h3 class="mb-0">
+                📖 Historia Clínica
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <p>
+                        <strong>N° Historia:</strong>
+                        @Model.Historia.IdHistoria
+                    </p>
+
+                    <p>
+                        <strong>ID Paciente:</strong>
+                        @Model.Historia.IdPaciente
+                    </p>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <p>
+                        <strong>Fecha de creación:</strong>
+                        @Model.Historia.FechaCreacion.ToString("dd/MM/yyyy")
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr />
+
+            <h4 class="mb-3">
+                🩺 Consultas Médicas
+            </h4>
+
+            @if (Model.Consultas.Count == 0)
+            {
+                <div class="alert alert-info">
+
+                    No existen consultas médicas registradas.
+
+                </div>
+            }
+            else
+            {
+                <table class="table table-hover table-striped">
+
+                    <thead class="table-primary">
+
+                        <tr>
+
+                            <th>Fecha</th>
+
+                            <th>Médico</th>
+
+                            <th>Diagnóstico</th>
+
+                            <th>Observaciones</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var consulta in Model.Consultas)
+                        {
+                            <tr>
+
+                                <td>
+                                    @consulta.Fecha.ToString("dd/MM/yyyy")
+                                </td>
+
+                                <td>
+                                    @consulta.Medico
+                                </td>
+
+                                <td>
+                                    @consulta.Diagnostico
+                                </td>
+
+                                <td>
+                                    @consulta.Observaciones
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            }
+
+            <div class="mt-3">
+
+                <a asp-controller="Dashboard"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                    ← Volver al Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

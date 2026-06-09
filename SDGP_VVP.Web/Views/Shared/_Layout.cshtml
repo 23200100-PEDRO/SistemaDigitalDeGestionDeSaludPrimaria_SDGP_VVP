@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SDGP VVP</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SDGP_VVP.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+
+            <div class="container-fluid px-4">
+
+                <div class="d-flex align-items-center">
+
+                    <div class="me-3 fs-1">
+                        🏥
+                    </div>
+
+                    <div>
+
+                        <div class="fs-2 fw-bold">
+                            Centro de Salud Villa Victoria Porvenir
+                        </div>
+
+                        <small>
+                            Surquillo - Lima
+                        </small>
+                                                
+                    </div>
+
+                </div>
+
+                <div class="d-flex align-items-center text-white">
+
+                    <div class="fs-2 me-3">
+                        ❤️
+                    </div>
+
+                    <div>
+
+                        <div class="fw-semibold">
+                            Cuidamos tu salud,
+                        </div>
+
+                        <div>
+                            cuidamos de todos.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO -->
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white mt-0">
+
+        <div class="container text-center py-4">
+
+            <div class="fw-bold">
+                Centro de Salud Villa Victoria Porvenir - Surquillo, Lima
+            </div>
+
+            <div>
+                Sistema Digital de Gestión de Salud Primaria (SDGP-VVP)
+            </div>
+
+            <div class="mt-2">
+                © 2026
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using SDGP_VVP.Infrastructure.Data;
-//Prueba de GitHub
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddSession();
 
 builder.Services.AddDbContext<SDGP_VVPContext>(options =>
     options.UseSqlServer(

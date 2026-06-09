@@ -147,5 +147,23 @@ namespace SDGP_VVP.api.Controllers
 
             return Ok(citas);
         }
+
+        [HttpPut("cancelar/{id}")]
+        public IActionResult CancelarCita(int id)
+        {
+            var cita = _context.CitaMedica
+                .FirstOrDefault(c => c.IdCita == id);
+
+            if (cita == null)
+            {
+                return NotFound();
+            }
+
+            cita.Estado = "Cancelada";
+
+            _context.SaveChanges();
+
+            return Ok("Cita cancelada correctamente");
+        }
     }
 }

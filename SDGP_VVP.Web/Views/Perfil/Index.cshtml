@@ -1,0 +1,84 @@
+﻿@model SDGP_VVP.Web.Models.PerfilViewModel
+
+@{
+    ViewData["Title"] = "Mi Perfil";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white">
+
+            <h3 class="mb-0">
+                👤 Mi Perfil
+            </h3>
+
+        </div>
+
+        <div class="card-body p-4">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <p>
+                        <strong>Nombres:</strong>
+                        @Model.Nombres
+                    </p>
+
+                    <p>
+                        <strong>Apellidos:</strong>
+                        @Model.Apellidos
+                    </p>
+
+                    <p>
+                        <strong>DNI:</strong>
+                        @Model.Dni
+                    </p>
+
+                    <p>
+                        <strong>Correo:</strong>
+                        @Model.Correo
+                    </p>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <p>
+                        <strong>Teléfono:</strong>
+                        @Model.Telefono
+                    </p>
+
+                    <p>
+                        <strong>Dirección:</strong>
+                        @Model.Direccion
+                    </p>
+
+                    <p>
+                        <strong>Seguro:</strong>
+                        @Model.Seguro
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+
+                <a asp-controller="Dashboard"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                    ← Volver al Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

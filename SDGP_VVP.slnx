@@ -5,4 +5,5 @@
   <Project Path="SDGP_VVP.api/SDGP_VVP.api.csproj" />
   <Project Path="SDGP_VVP.Core/SDGP_VVP.Core.csproj" />
   <Project Path="SDGP_VVP.Infrastructure/SDGP_VVP.Infrastructure.csproj" />
+  <Project Path="SDGP_VVP.Web/SDGP_VVP.Web.csproj" Id="f07f5fe0-a4fa-4b16-9b99-5c7d8b2ba51c" />
 </Solution>

@@ -1,0 +1,198 @@
+﻿@model SDGP_VVP.Web.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-2">
+
+    <div class="card shadow p-3">
+
+        <h2 class="text-primary fw-bold">
+            Bienvenido
+            @ViewBag.Nombre
+            @ViewBag.Apellidos 👋
+        </h2>
+
+        <hr />
+
+        <p>
+            Inicio de sesión exitoso.
+        </p>
+
+        <!-- ESTADÍSTICAS -->
+
+        <div class="row mt-4 mb-5 text-center">
+
+            <div class="col">
+                <div class="card shadow-sm border-primary">
+                    <div class="card-body py-3">
+                        <h4>📅</h4>
+                        <h4>@Model.TotalCitas</h4>
+                        <small>Total Citas</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm border-success">
+                    <div class="card-body py-3">
+                        <h4>✅</h4>
+                        <h4>@Model.CitasReservadas</h4>
+                        <small>Reservadas</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm border-danger">
+                    <div class="card-body py-3">
+                        <h4>❌</h4>
+                        <h4>@Model.CitasCanceladas</h4>
+                        <small>Canceladas</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm border-info">
+                    <div class="card-body py-3">
+                        <h4>👨‍⚕️</h4>
+                        <h4>@Model.TotalMedicos</h4>
+                        <small>Médicos</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-body py-3">
+                        <h4>📖</h4>
+                        <h4>@Model.TotalHistorias</h4>
+                        <small>Historias Clínicas</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+              
+
+        </div>
+
+        <!-- MÓDULOS -->
+
+        <div class="row mt-4 g-4">
+
+            <div class="col-md-4">
+
+                <a asp-controller="Cita"
+                       asp-action="Reservar"
+                       class="text-decoration-none text-dark">
+
+                    <div class="card dashboard-card p-4 text-center shadow-sm">
+
+                        <h1>📅</h1>
+
+                        <h5>Reservar Cita</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <a asp-controller="MisCitas"
+                       asp-action="Index"
+                       class="text-decoration-none text-dark">
+
+                    <div class="card dashboard-card p-4 text-center shadow-sm">
+
+                        <h1>📋</h1>
+
+                        <h5>Mis Citas</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <a asp-controller="HistoriaClinica"
+                       asp-action="Index"
+                       class="text-decoration-none text-dark">
+
+                    <div class="card dashboard-card p-4 text-center shadow-sm">
+
+                        <h1>📖</h1>
+
+                        <h5>Historia Clínica</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <a asp-controller="Medico"
+                       asp-action="Index"
+                       class="text-decoration-none text-dark">
+
+                    <div class="card dashboard-card p-4 text-center shadow-sm">
+
+                        <h1>👨‍⚕️</h1>
+
+                        <h5>Médicos</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <a asp-controller="Perfil"
+                       asp-action="Index"
+                       class="text-decoration-none text-dark">
+
+                    <div class="card dashboard-card p-4 text-center shadow-sm">
+
+                        <h1>👤</h1>
+
+                        <h5>Mi Perfil</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-md-4">
+
+            <a asp-controller="Auth"
+                   asp-action="Logout"
+                       class="text-decoration-none text-dark">
+
+                    <div class="card dashboard-card p-4 text-center shadow-sm">
+
+                        <h1>🚪</h1>
+
+                        <h5>Cerrar Sesión</h5>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

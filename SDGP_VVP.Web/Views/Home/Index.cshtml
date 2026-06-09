@@ -1,0 +1,193 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container-fluid p-0">
+
+    <div class="row g-0">
+
+        <!-- FOTO -->
+        <div class="col-lg-7">
+
+            <img src="/images/centro-salud.png"
+                 class="img-fluid vh-100 w-100 object-fit-cover"
+                 alt="Centro de Salud Villa Victoria Porvenir" />
+
+        </div>
+
+        <!-- LOGIN -->
+        <div class="col-lg-5 d-flex align-items-center justify-content-center bg-light">
+
+            <div class="card shadow-lg border-0 p-5"
+                 style="
+                width:500px;
+                border-radius:25px;
+                background:white;
+                ">
+
+                <div class="text-center">
+
+                    <h3 class="fw-bold text-primary">
+                        Bienvenido al
+                    </h3>
+
+                    <h2 class="fw-bold text-primary">
+                        SDGP-VVP
+                    </h2>
+
+                    <p class="text-muted">
+                        Sistema Digital de Gestión de Salud Primaria
+                    </p>
+
+                </div>
+
+                <hr />
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger">
+                        @ViewBag.Error
+                    </div>
+                }
+
+                <form asp-controller="Auth"
+                      asp-action="Login"
+                      method="post">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Usuario
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                👤
+                            </span>
+
+                            <input name="Correo"
+                                   type="email"
+                                   class="form-control"
+                                   placeholder="Ingrese su correo"
+                                   required />
+
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Contraseña
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                🔒
+                            </span>
+
+                            <input name="Password"
+                                   type="password"
+                                   class="form-control"
+                                   placeholder="Ingrese su contraseña"
+                                   required />
+
+                        </div>
+
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary btn-lg w-100">
+
+                        Iniciar Sesión
+
+                    </button>
+
+                </form>
+
+                <div class="text-center mt-4">
+
+                    <small class="text-muted">
+                        Centro de Salud Villa Victoria Porvenir
+                    </small>
+
+                    <br />
+
+                    <small class="text-muted">
+                        Surquillo - Lima
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <!-- TARJETAS -->
+    <div class="container mt-5 mb-5">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5>📅 Reserva tu cita</h5>
+                        <p>
+                            Agenda tu atención médica
+                            de manera rápida y sencilla.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5>📋 Consulta tus citas</h5>
+                        <p>
+                            Revisa tus citas programadas
+                            y su estado.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5>📄 Historia Clínica</h5>
+                        <p>
+                            Consulta tu información
+                            médica de forma segura.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5>❤️ Atención de Calidad</h5>
+                        <p>
+                            Comprometidos con la salud
+                            y bienestar de nuestros pacientes.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
